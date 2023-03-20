@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let point = [7, 5, 1, 2, 3, 4, 6]
+
+    document.writeln(findThirdMax(point))
+
+    function findThirdMax(arr) {
+        let temp
+
+        for (let j = 0; j < arr.length; j++) {
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] > arr[i + 1]){
+                    temp = arr[i + 1]
+                    arr[i + 1] = arr[i]
+                    arr[i] = temp
+                }
+            }
+        }
+
+        for (let j = 0; j < 2; j++) {
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] === findMax(arr)){
+                    arr[i] = ''
+                }
+            }
+        }
+        console.log(arr)
+        return findMax(arr)
+    }
+
+    function findMax(arr) {
+        let max = arr[0]
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i]
+            }
+        }
+        return max
+    }
+</script>
+</body>
+</html>
