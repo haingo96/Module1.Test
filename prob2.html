@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let inputArr = [1, 2, 3, 4, 5, 6, 7]
+    let index = 4
+
+    let result = tryRemoveFromArray(inputArr, index)
+    console.log(result)
+
+    function tryRemoveFromArray(arr, index) {
+        if (index < 0 || index >= arr.length) {
+            return arr
+        } else {
+            for (let i = index; i < arr.length; i++) {
+                arr[i] = arr[i + 1]
+            }
+            arr.length -= 1
+            return arr
+        }
+    }
+</script>
+</body>
+</html>
