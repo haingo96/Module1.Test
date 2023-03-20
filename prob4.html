@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas"
+        style="height: 700px; width: 500px; border-color: black; border-style: solid; border-width: 1px"></canvas>
+
+<script>
+    class Rectangle {
+        constructor(posX, posY, width, height, color) {
+            this.posX = posX
+            this.posY = posY
+            this.width = width
+            this.height = height
+            this.color = color
+        }
+
+        render = function () {
+            let ctx = document.getElementById('myCanvas').getContext('2d')
+            ctx.beginPath()
+            ctx.rect(this.posX, this.posY, this.width, this.height)
+            ctx.stroke()
+        }
+    }
+
+    let rect1 = new Rectangle(10, 10, 200, 100, '#000000')
+    rect1.render()
+</script>
+</body>
+</html>
