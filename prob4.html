@@ -20,9 +20,9 @@
 
         render = function () {
             let ctx = document.getElementById('myCanvas').getContext('2d')
+            ctx.fillStyle = this.color
             ctx.beginPath()
-            ctx.rect(this.posX, this.posY, this.width, this.height)
-            ctx.stroke()
+            ctx.fillRect(this.posX, this.posY, this.width, this.height)
         }
     }
 
